@@ -1,16 +1,14 @@
 "use strict";
+;
 (() => {
-    let flash = {
-        name: 'Barry Allen',
-        age: 24,
-        powers: [1, 2]
+    let myCustomVariable = 'Fernando';
+    console.log(typeof myCustomVariable);
+    myCustomVariable = 20;
+    console.log(typeof myCustomVariable);
+    myCustomVariable = {
+        name: 'Bruce',
+        age: 43,
+        powers: [1]
     };
-    let superman = {
-        name: 'Clark Kent',
-        age: 60,
-        powers: [1],
-        getName() {
-            return this.name;
-        }
-    };
+    console.log(typeof myCustomVariable);
 })();

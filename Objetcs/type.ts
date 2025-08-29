@@ -1,25 +1,23 @@
-(()=>{
+;(() => {
+    type Hero = {
+        name: string
+        age?: number
+        powers: number[]
+        getName?: () => string
+    }
+    let myCustomVariable: string | number | boolean | Hero = 'Fernando'
 
-    type Hero={
-        name: string;
-        age?: number;
-        powers: number[];
-        getName?: ()=>string
+    console.log(typeof myCustomVariable)
+
+    myCustomVariable = 20
+
+    console.log(typeof myCustomVariable)
+
+    myCustomVariable = {
+        name: 'Bruce',
+        age: 43,
+        powers: [1]
     }
 
-
-    let flash: Hero = {
-        name: 'Barry Allen',
-        age: 24,
-        powers: [1, 2]
-    }
-
-    let superman: Hero = {
-        name: 'Clark Kent',
-        age: 60,
-        powers: [1],
-        getName() {
-            return this.name
-        }
-    }
+    console.log(typeof myCustomVariable)
 })()
