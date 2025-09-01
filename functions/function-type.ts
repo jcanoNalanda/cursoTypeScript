@@ -5,22 +5,22 @@
 
     //* Dependiendo de como declaremos la variable myFunction nos dará error o no con las funciones asociadas
 
-    //?    let myFunction: number
+   /*  let myFunction: number
 
     myFunction = 10
-    console.log({ myFunction })
+    console.log({ myFunction }) */
 
-    //?    let myFunction: (y:number, z:number) => number
+    /* let myFunction: (y:number, z:number) => number
 
     myFunction = addNumber
-    console.log(myFunction(1, 2))
+    console.log(myFunction(1, 2)) */
 
-    //?    let myFunction: (y:string) => string
+    /* let myFunction: (y:string) => string
 
     myFunction = greet
-    console.log(myFunction('Fernando'))
+    console.log(myFunction('Fernando')) */
 
-    //? let myFunction: () => string
+    let myFunction: () => string
 
     myFunction = saveTheWorld
     console.log(myFunction())
