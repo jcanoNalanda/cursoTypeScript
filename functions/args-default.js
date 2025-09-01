@@ -11,3 +11,4 @@
     }
     console.log(activarFuncion('Juan', 'Perez', true));
 })();
+//# sourceMappingURL=args-default.js.map

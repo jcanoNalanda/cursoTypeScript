@@ -7,3 +7,4 @@
     }
     console.log(activarFuncion(primero));
 })();
+//# sourceMappingURL=functions.js.map

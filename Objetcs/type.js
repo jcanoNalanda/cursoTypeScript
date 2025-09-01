@@ -12,3 +12,4 @@
     };
     console.log(typeof myCustomVariable);
 })();
+//# sourceMappingURL=type.js.map
