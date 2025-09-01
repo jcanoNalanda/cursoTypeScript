@@ -1,8 +1,21 @@
 "use strict";
 ;
 (() => {
-    const avengersArr = ['Cap. America', true, 123.123];
-    const [capitan, boolean, number] = avengersArr;
-    console.log({ number, capitan, boolean });
+    const ironman = {
+        name: 'Ironman',
+        weapon: 'Armorsuit'
+    };
+    const captainAmerica = {
+        name: 'Captain America',
+        weapon: 'Shield'
+    };
+    const thor = {
+        name: 'Thor',
+        weapon: 'Mjolnir'
+    };
+    const avengers = [ironman, captainAmerica, thor];
+    for (const avenger of avengers) {
+        console.log(`Name: ${avenger.name}, Weapon: ${avenger.weapon}`);
+    }
 })();
 //# sourceMappingURL=main.js.map
