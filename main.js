@@ -1,16 +1,8 @@
 "use strict";
 ;
 (() => {
-    const avengers = {
-        nick: 'Nick Fury',
-        ironman: 'Robert Downey Jr.',
-        cap: 'Captain America',
-        activo: true,
-        poder: 140.12313
-    };
-    const printAvenger = ({ ironman, ...resto }) => {
-        console.log(ironman, resto);
-    };
-    printAvenger(avengers);
+    const avengersArr = ['Cap. America', true, 123.123];
+    const [capitan, boolean, number] = avengersArr;
+    console.log({ number, capitan, boolean });
 })();
 //# sourceMappingURL=main.js.map

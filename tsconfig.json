@@ -111,5 +111,5 @@
         "skipLibCheck": true /* Skip type checking all .d.ts files. */
     },
     "exclude": ["pruebaExcluir"],
-    "include": ["ES6"]
+    "include": ["ES6/Desestruct-Array.ts"]
 }
