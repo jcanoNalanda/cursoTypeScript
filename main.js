@@ -1,21 +1,15 @@
 "use strict";
 ;
 (() => {
-    const ironman = {
-        name: 'Ironman',
-        weapon: 'Armorsuit'
-    };
-    const captainAmerica = {
-        name: 'Captain America',
-        weapon: 'Shield'
-    };
-    const thor = {
-        name: 'Thor',
-        weapon: 'Mjolnir'
-    };
-    const avengers = [ironman, captainAmerica, thor];
-    for (const avenger of avengers) {
-        console.log(`Name: ${avenger.name}, Weapon: ${avenger.weapon}`);
+    class Avenger {
+        constructor(name, team, realName) {
+            this.name = name;
+            this.team = team;
+            this.realName = realName;
+        }
     }
+    Avenger.avgAge = 35;
+    const antman = new Avenger('Antman', 'Team B');
+    console.log(antman.team);
 })();
 //# sourceMappingURL=main.js.map
