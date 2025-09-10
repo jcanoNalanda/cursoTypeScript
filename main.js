@@ -8,6 +8,9 @@
             id: 123,
             zip: '12345',
             city: 'Madrid'
+        },
+        getFullAddress(id) {
+            return this.address.city;
         }
     };
     const client2 = {
@@ -17,6 +20,9 @@
             id: 456,
             zip: '67890',
             city: 'Barcelona'
+        },
+        getFullAddress(id) {
+            return this.address.city;
         }
     };
 })();
