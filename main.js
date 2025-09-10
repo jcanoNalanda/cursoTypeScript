@@ -1,27 +1,18 @@
 "use strict";
 ;
 (() => {
-    class Apocalipsis {
-        nombre;
-        static instance;
-        constructor(nombre) {
-            this.nombre = nombre;
+    let flash = {
+        name: 'Barry Allen',
+        age: 24,
+        powers: [1, 2]
+    };
+    let superman = {
+        name: 'Clark Kent',
+        age: 60,
+        powers: [1],
+        getName() {
+            return this.name;
         }
-        static callApocalipsis() {
-            if (!Apocalipsis.instance) {
-                Apocalipsis.instance = new Apocalipsis('Jesús');
-            }
-            return Apocalipsis.instance;
-        }
-        changeName(newName) {
-            this.nombre = newName;
-        }
-    }
-    const apocalipsis1 = Apocalipsis.callApocalipsis();
-    const apocalipsis2 = Apocalipsis.callApocalipsis();
-    const apocalipsis3 = Apocalipsis.callApocalipsis();
-    const apocalipsis4 = Apocalipsis.callApocalipsis();
-    apocalipsis1.changeName('Paco');
-    console.log(apocalipsis1, apocalipsis2, apocalipsis3, apocalipsis4);
+    };
 })();
 //# sourceMappingURL=main.js.map
