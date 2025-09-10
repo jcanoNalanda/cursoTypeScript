@@ -1,4 +1,5 @@
 "use strict";
+;
 (() => {
     class Avenger {
         name;
@@ -17,11 +18,22 @@
             super(name, realName);
             this.isMutant = isMutant;
         }
+        get fullName() {
+            return `${this.name} - ${this.realName}`;
+        }
+        set fullName(name) {
+            if (name.length < 3) {
+                throw new Error('El nombre debe ser mayor a 3 letras');
+            }
+            this.name = name;
+        }
         getFullNameDesdeXmen() {
             return `${super.getFullName()} - ${this.isMutant ? 'Mutante' : 'No Mutante'}`;
         }
     }
-    const wolverine = new Xmen("Wolverine", "Logan", true);
-    console.log(wolverine.getFullNameDesdeXmen());
+    const wolverine = new Xmen('Wolverine', 'Logan', true);
+    wolverine.fullName = 'Jesús';
+    wolverine.fullName = 'Je';
+    console.log(wolverine.fullName);
 })();
 //# sourceMappingURL=main.js.map
