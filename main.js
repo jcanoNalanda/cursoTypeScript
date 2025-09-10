@@ -1,17 +1,22 @@
 "use strict";
 ;
 (() => {
-    let flash = {
-        name: 'Barry Allen',
-        age: 24,
-        powers: [1, 2]
+    const client = {
+        name: 'Juan',
+        age: 30,
+        address: {
+            id: 123,
+            zip: '12345',
+            city: 'Madrid'
+        }
     };
-    let superman = {
-        name: 'Clark Kent',
-        age: 60,
-        powers: [1],
-        getName() {
-            return this.name;
+    const client2 = {
+        name: 'Pedro',
+        age: 20,
+        address: {
+            id: 456,
+            zip: '67890',
+            city: 'Barcelona'
         }
     };
 })();
