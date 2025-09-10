@@ -1,39 +1,32 @@
 "use strict";
 ;
 (() => {
-    class Avenger {
+    class Mutante {
         name;
         realName;
         constructor(name, realName) {
             this.name = name;
             this.realName = realName;
         }
-        getFullName() {
-            return `${this.name} ${this.realName}`;
+    }
+    class Xmen extends Mutante {
+        salvarMundo() {
+            return 'Mundo salvado!';
         }
     }
-    class Xmen extends Avenger {
-        isMutant;
-        constructor(name, realName, isMutant) {
-            super(name, realName);
-            this.isMutant = isMutant;
-        }
-        get fullName() {
-            return `${this.name} - ${this.realName}`;
-        }
-        set fullName(name) {
-            if (name.length < 3) {
-                throw new Error('El nombre debe ser mayor a 3 letras');
-            }
-            this.name = name;
-        }
-        getFullNameDesdeXmen() {
-            return `${super.getFullName()} - ${this.isMutant ? 'Mutante' : 'No Mutante'}`;
+    class Villian extends Mutante {
+        conquistarMundo() {
+            return 'Mundo conquistado!';
         }
     }
-    const wolverine = new Xmen('Wolverine', 'Logan', true);
-    wolverine.fullName = 'Jesús';
-    wolverine.fullName = 'Je';
-    console.log(wolverine.fullName);
+    const wolverine = new Xmen('Wolverine', 'Logan');
+    const magneto = new Villian('Magneto', 'Max Eisenhardt');
+    console.log(wolverine.salvarMundo());
+    console.log(magneto.conquistarMundo());
+    const printName = (character) => {
+        console.log(character.realName);
+    };
+    printName(wolverine);
+    printName(magneto);
 })();
 //# sourceMappingURL=main.js.map
