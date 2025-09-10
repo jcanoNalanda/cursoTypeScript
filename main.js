@@ -1,32 +1,27 @@
 "use strict";
 ;
 (() => {
-    class Mutante {
-        name;
-        realName;
-        constructor(name, realName) {
-            this.name = name;
-            this.realName = realName;
+    class Apocalipsis {
+        nombre;
+        static instance;
+        constructor(nombre) {
+            this.nombre = nombre;
+        }
+        static callApocalipsis() {
+            if (!Apocalipsis.instance) {
+                Apocalipsis.instance = new Apocalipsis('Jesús');
+            }
+            return Apocalipsis.instance;
+        }
+        changeName(newName) {
+            this.nombre = newName;
         }
     }
-    class Xmen extends Mutante {
-        salvarMundo() {
-            return 'Mundo salvado!';
-        }
-    }
-    class Villian extends Mutante {
-        conquistarMundo() {
-            return 'Mundo conquistado!';
-        }
-    }
-    const wolverine = new Xmen('Wolverine', 'Logan');
-    const magneto = new Villian('Magneto', 'Max Eisenhardt');
-    console.log(wolverine.salvarMundo());
-    console.log(magneto.conquistarMundo());
-    const printName = (character) => {
-        console.log(character.realName);
-    };
-    printName(wolverine);
-    printName(magneto);
+    const apocalipsis1 = Apocalipsis.callApocalipsis();
+    const apocalipsis2 = Apocalipsis.callApocalipsis();
+    const apocalipsis3 = Apocalipsis.callApocalipsis();
+    const apocalipsis4 = Apocalipsis.callApocalipsis();
+    apocalipsis1.changeName('Paco');
+    console.log(apocalipsis1, apocalipsis2, apocalipsis3, apocalipsis4);
 })();
 //# sourceMappingURL=main.js.map

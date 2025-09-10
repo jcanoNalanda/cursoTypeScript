@@ -111,5 +111,5 @@
         "skipLibCheck": true /* Skip type checking all .d.ts files. */
     },
     "exclude": ["pruebaExcluir"],
-    "include": ["classes/abstract.ts"]
+    "include": ["classes/privade-constructor.ts"]
 }
