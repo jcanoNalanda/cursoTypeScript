@@ -1,83 +1,78 @@
-;(() => {
-    type Vehicle = {
-        carroceria: string
-        modelo: string
-        antibalas: boolean
-        pasajeros: number
-        disparar?: () => void
+// Crear interfaces
+
+interface Auto {
+    encender: boolean
+    velocidadMaxima: number
+    acelear(): void
+}
+
+// Cree una interfaz para validar el auto (el valor enviado por parámetro)
+const conducirBatimovil = (auto: Auto): void => {
+    auto.encender = true
+    auto.velocidadMaxima = 100
+    auto.acelear()
+}
+
+const batimovil: Auto = {
+    encender: false,
+    velocidadMaxima: 0,
+    acelear() {
+        console.log('...... gogogo!!!')
     }
+}
 
-    // Objetos
-    const batimovil: Vehicle = {
-        carroceria: 'Negra',
-        modelo: '6x6',
-        antibalas: true,
-        pasajeros: 4
+// Cree una interfaz con que permita utilizar el siguiente objeto
+// utilizando propiedades opcionales
+interface Guason {
+    reir?: boolean
+    comer?: boolean
+    llorar?: boolean
+}
+
+const guason: Guason = {
+    reir: true,
+    comer: true,
+    llorar: false
+}
+
+const reir = (guason: Guason): void => {
+    if (guason?.reir) {
+        console.log('JAJAJAJA')
     }
+}
 
-    const bumblebee: Vehicle = {
-        carroceria: 'Amarillo con negro',
-        modelo: '4x2',
-        antibalas: true,
-        pasajeros: 4,
-        disparar() {
-            // El metodo disparar es opcional
-            console.log('Disparando')
-        }
+// Cree una interfaz para la siguiente funcion
+interface CiudadGotica {
+    (ciudadanos: string[]): number
+}
+
+const ciudadGotica: CiudadGotica = (ciudadanos: string[]): number => {
+    return ciudadanos.length
+}
+
+// Cree una interfaz que obligue crear una clase
+// con las siguientes propiedades y metodos
+interface Persona {
+    edad: number
+    estadoCivil: string
+    nombre: string
+    sexo: string
+    imprimirBio(): void
+}
+/*
+    propiedades:
+      - nombre
+      - edad
+      - sexo
+      - estadoCivil
+      - imprimirBio(): void // en consola una breve descripcion.
+  */
+class Person implements Persona {
+    public edad
+    public estadoCivil
+    public nombre
+    public sexo
+    public imprimirBio() {
+        console.log(`${this.nombre} ${this.edad} ${this.sexo} ${this.estadoCivil}`)
     }
-
-    type Villano = {
-        nombre: string
-        edad?: number
-        mutante: boolean
-    }
-
-    // Villanos debe de ser un arreglo de objetos personalizados
-    const villanos: Villano[] = [
-        {
-            nombre: 'Lex Luthor',
-            edad: 54,
-            mutante: false
-        },
-        {
-            nombre: 'Erik Magnus Lehnsherr',
-            edad: 49,
-            mutante: true
-        },
-        {
-            nombre: 'James Logan',
-            edad: undefined,
-            mutante: true
-        }
-    ]
-
-    type Charles = {
-        poder: string
-        estatura: number
-    }
-
-    type Apocalipsis = {
-        lider: boolean
-        miembros: string[]
-    }
-
-    // Multiples tipos
-    // cree dos tipos, uno para charles y otro para apocalipsis
-    const charles: Charles = {
-        poder: 'psiquico',
-        estatura: 1.78
-    }
-
-    const apocalipsis: Apocalipsis = {
-        lider: true,
-        miembros: ['Magneto', 'Tormenta', 'Psylocke', 'Angel']
-    }
-
-    // Mystique, debe poder ser cualquiera de esos dos mutantes (charles o apocalipsis)
-    let mystique: Charles | Apocalipsis
-
-    mystique = charles
-    mystique = apocalipsis
-
-    console.log(mystique)
-})()
+}
