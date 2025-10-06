@@ -1,29 +1,13 @@
 "use strict";
-;
-(() => {
-    const client = {
-        name: 'Juan',
-        age: 30,
-        address: {
-            id: 123,
-            zip: '12345',
-            city: 'Madrid'
-        },
-        getFullAddress(id) {
-            return this.address.city;
-        }
+var Validations;
+(function (Validations) {
+    Validations.validateText = (text) => {
+        return text.trim().length > 3;
     };
-    const client2 = {
-        name: 'Pedro',
-        age: 20,
-        address: {
-            id: 456,
-            zip: '67890',
-            city: 'Barcelona'
-        },
-        getFullAddress(id) {
-            return this.address.city;
-        }
+    Validations.validateDate = (date) => {
+        return !isNaN(date.valueOf());
     };
-})();
+})(Validations || (Validations = {}));
+console.log(Validations.validateText('Hola'));
+
 //# sourceMappingURL=main.js.map
