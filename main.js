@@ -1,30 +1,24 @@
-define("generic/generics", ["require", "exports"], function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define("generic/get-pokemon", ["require", "exports", "../../node_modules/axios/index"], function (require, exports, index_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.genericFunctionArrow = exports.printObject = void 0;
-    exports.genericFunction = genericFunction;
-    const printObject = (argument) => {
-        console.log(argument);
+    exports.getPokemon = void 0;
+    index_1 = __importDefault(index_1);
+    const getPokemon = async (pokemonId) => {
+        const resp = await index_1.default.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+        console.log(resp);
+        return 1;
     };
-    exports.printObject = printObject;
-    function genericFunction(argument) {
-        return argument;
-    }
-    const genericFunctionArrow = (argument) => argument;
-    exports.genericFunctionArrow = genericFunctionArrow;
+    exports.getPokemon = getPokemon;
 });
-define("interfaces/hero", ["require", "exports"], function (require, exports) {
+define("index", ["require", "exports", "generic/get-pokemon"], function (require, exports, get_pokemon_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-});
-define("index", ["require", "exports", "generic/generics"], function (require, exports, generics_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const deadpool = {
-        name: 'Deadpool',
-        realName: 'Wade Winston',
-        dangerLevel: 130
-    };
-    console.log((0, generics_1.genericFunctionArrow)(deadpool).name);
+    console.log((0, get_pokemon_1.getPokemon)(5)
+        .then(console.log)
+        .catch(console.log)
+        .finally(() => console.log('Finally')));
 });
 //# sourceMappingURL=main.js.map
